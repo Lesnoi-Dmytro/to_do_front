@@ -21,9 +21,10 @@ const Task = ({task, setTasks}: ITaskProps) => {
 
     const updateTask = async () => {
         await updateTaskRequest({
-            ...task,
+            _id: task._id,
             title,
-            description
+            description,
+            isCompleted: !task.isCompleted
         });
         setUpdating(false);
     }
